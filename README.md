@@ -79,6 +79,28 @@ https://YOUR-USERNAME.github.io/davidov-israel-investments/
 
 ## 🔧 Things You MUST Update
 
+### 💡 Quick Navigation
+The website includes helpful comments to guide you. Search for these in `index.html`:
+- **`⚠️ PLACEHOLDER`** - Marks sections that need your customization
+- **`[`** - Finds all bracketed placeholders that need replacing
+- **`========`** - Section dividers for major site sections
+
+**TIP:** Use Ctrl+F (Cmd+F on Mac) to quickly jump between placeholders.
+
+### 📋 All Sections with Comments
+The website is organized with clear section markers:
+
+1. **HERO SECTION** - Main landing area with headline
+2. **SERVICES SECTION** - What you offer to clients
+3. **PROCESS SECTION** - 4-step journey explanation
+4. **AREAS SECTION** - ⚠️ Add location images
+5. **TESTIMONIALS SECTION** - ⚠️ Replace [CLIENT NAME] (3 testimonials)
+6. **WHY CHOOSE US SECTION** - ⚠️ Add team photo
+7. **BLOG/KNOWLEDGE CENTER SECTION** - Educational content
+8. **CONTACT FORM SECTION** - ⚠️ Update phone/email/WhatsApp
+9. **FOOTER SECTION** - ⚠️ Update contact information
+10. **WHATSAPP FLOATING BUTTON** - ⚠️ Update link with your number
+
 ### 1. Contact Information
 Search and replace these placeholders in ALL files:
 

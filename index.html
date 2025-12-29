@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+    ═══════════════════════════════════════════════════════════════════
+    DAVIDOV ISRAEL INVESTMENTS - Website
+    ═══════════════════════════════════════════════════════════════════
+
+    📍 PLACEHOLDERS TO UPDATE:
+    Search for "⚠️ PLACEHOLDER" comments throughout this file to find
+    sections that need customization:
+
+    1. Client Testimonials - Replace [CLIENT NAME] with real names
+    2. Team Photo - Add images/team.jpg
+    3. Contact Info - Update phone numbers, email, WhatsApp
+    4. Location Images - Add city photos (see images/README.md)
+
+    💡 TIP: Use Ctrl+F (Cmd+F on Mac) to search for:
+       - "⚠️ PLACEHOLDER" - Find all sections needing updates
+       - "[" - Find all bracketed placeholders
+
+    ═══════════════════════════════════════════════════════════════════
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davidov Israel Investments | Your Gateway to Israeli Real Estate</title>
     <meta name="description" content="Full-service Israeli real estate for American Jewish families. Property search, legal support, mortgage assistance, and property management.">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -791,6 +811,29 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
         }
+
+        /* Language Toggle */
+        .lang-toggle {
+            background: transparent;
+            border: 2px solid var(--color-accent);
+            color: var(--color-accent);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .lang-toggle:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+        @media (max-width: 768px) {
+            .lang-toggle {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -801,64 +844,71 @@
                 <span class="logo-text">DAVIDOV</span>
                 <span class="logo-sub">Israel Investments</span>
             </a>
-            
+
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            
+
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#areas">Areas</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#blog">Knowledge</a></li>
-                <li><a href="#contact" class="nav-cta">Schedule Meeting</a></li>
+                <li><a href="#" class="active" data-translate="Home">Home</a></li>
+                <li><a href="#services" data-translate="Services">Services</a></li>
+                <li><a href="#areas" data-translate="Areas">Areas</a></li>
+                <li><a href="#about" data-translate="About Us">About Us</a></li>
+                <li><a href="#testimonials" data-translate="Testimonials">Testimonials</a></li>
+                <li><a href="#blog" data-translate="Knowledge">Knowledge</a></li>
+                <li><a href="#contact" class="nav-cta" data-translate="Schedule Meeting">Schedule Meeting</a></li>
+                <li><button id="langToggle" class="lang-toggle" aria-label="Switch language">עב</button></li>
             </ul>
         </div>
     </nav>
 
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <div class="hero-badge">Trusted by 150+ American Families</div>
-            <h1 class="hero-title">Your Gateway to<br><span class="highlight">Israeli Real Estate</span></h1>
-            <p class="hero-subtitle">We handle everything — from finding your perfect property to managing your investment. Full-service support for American Jews investing in Israel.</p>
+            <h1 class="hero-title"><span data-translate="Your Gateway to">Your Gateway to</span><br><span class="highlight" data-translate="Israeli Real Estate">Israeli Real Estate</span></h1>
+            <p class="hero-subtitle" data-translate="We handle everything — from finding your perfect property to managing your investment. Full-service support for American Jews investing in Israel.">We handle everything — from finding your perfect property to managing your investment. Full-service support for American Jews investing in Israel.</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Schedule Free Consultation</a>
-                <a href="#services" class="btn btn-outline">How It Works</a>
+                <a href="#contact" class="btn btn-primary" data-translate="Schedule Free Consultation">Schedule Free Consultation</a>
+                <a href="#services" class="btn btn-outline" data-translate="How It Works">How It Works</a>
             </div>
             <div class="hero-trust">
                 <div class="trust-item">
                     <span class="trust-number">150+</span>
-                    <span class="trust-label">Families Served</span>
+                    <span class="trust-label" data-translate="Families Served">Families Served</span>
                 </div>
                 <div class="trust-divider"></div>
                 <div class="trust-item">
                     <span class="trust-number">10+</span>
-                    <span class="trust-label">Years Experience</span>
+                    <span class="trust-label" data-translate="Years Experience">Years Experience</span>
                 </div>
             </div>
         </div>
         <div class="hero-scroll">
-            <span>Scroll to explore</span>
+            <span data-translate="Scroll to explore">Scroll to explore</span>
             <div class="scroll-indicator"></div>
         </div>
     </section>
 
+    <!-- ========================================
+         SERVICES SECTION
+         What we offer to clients
+         ======================================== -->
     <!-- Services Overview -->
     <section class="services-overview section" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Full-Cycle Investment Management</h2>
-                <p class="section-subtitle">From your first call to rental income — we handle every step of your Israeli property journey.</p>
+                <span class="section-tag" data-translate="What We Do">What We Do</span>
+                <h2 class="section-title" data-translate="Full-Cycle Investment Management">Full-Cycle Investment Management</h2>
+                <p class="section-subtitle" data-translate="From your first call to rental income — we handle every step of your Israeli property journey.">From your first call to rental income — we handle every step of your Israeli property journey.</p>
             </div>
-            
+
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -866,103 +916,112 @@
                             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                         </svg>
                     </div>
-                    <h3>Property Search</h3>
-                    <p>Personalized property matching based on your goals — investment, vacation home, or Aliyah planning.</p>
+                    <h3 data-translate="Property Search">Property Search</h3>
+                    <p data-translate="Personalized property matching based on your goals — investment, vacation home, or Aliyah planning.">Personalized property matching based on your goals — investment, vacation home, or Aliyah planning.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>
                     </div>
-                    <h3>Legal Support</h3>
-                    <p>English-speaking Israeli lawyers handle contracts, negotiations, and tax consultation.</p>
+                    <h3 data-translate="Legal Support">Legal Support</h3>
+                    <p data-translate="English-speaking Israeli lawyers handle contracts, negotiations, and tax consultation.">English-speaking Israeli lawyers handle contracts, negotiations, and tax consultation.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3>Mortgage Assistance</h3>
-                    <p>Israeli bank coordination, documentation support, and best rate negotiation.</p>
+                    <h3 data-translate="Mortgage Assistance">Mortgage Assistance</h3>
+                    <p data-translate="Israeli bank coordination, documentation support, and best rate negotiation.">Israeli bank coordination, documentation support, and best rate negotiation.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                         </svg>
                     </div>
-                    <h3>Property Management</h3>
-                    <p>Tenant screening, rent collection, maintenance, and monthly reporting — all handled remotely.</p>
+                    <h3 data-translate="Property Management">Property Management</h3>
+                    <p data-translate="Tenant screening, rent collection, maintenance, and monthly reporting — all handled remotely.">Tenant screening, rent collection, maintenance, and monthly reporting — all handled remotely.</p>
                 </div>
             </div>
-            
+
             <div class="services-cta">
-                <a href="#contact" class="btn btn-secondary">View All Services →</a>
+                <a href="#contact" class="btn btn-secondary" data-translate="View All Services →">View All Services →</a>
             </div>
         </div>
     </section>
 
+    <!-- ========================================
+         PROCESS SECTION
+         4-step journey explanation
+         ======================================== -->
     <!-- How It Works -->
     <section class="how-it-works section section-dark">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">The Process</span>
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-subtitle">A simple 4-step journey to owning property in Israel</p>
+                <span class="section-tag" data-translate="The Process">The Process</span>
+                <h2 class="section-title" data-translate="How It Works">How It Works</h2>
+                <p class="section-subtitle" data-translate="A simple 4-step journey to owning property in Israel">A simple 4-step journey to owning property in Israel</p>
             </div>
-            
+
             <div class="process-timeline">
                 <div class="process-step">
                     <div class="step-number">01</div>
                     <div class="step-content">
-                        <h3>Discovery Call</h3>
-                        <p>Tell us about your goals, budget, and timeline. We'll understand exactly what you're looking for.</p>
+                        <h3 data-translate="Discovery Call">Discovery Call</h3>
+                        <p data-translate="Tell us about your goals, budget, and timeline. We'll understand exactly what you're looking for.">Tell us about your goals, budget, and timeline. We'll understand exactly what you're looking for.</p>
                     </div>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <h3>Property Matching</h3>
-                        <p>We search the market and present curated properties that match your criteria — with virtual tours available.</p>
+                        <h3 data-translate="Property Matching">Property Matching</h3>
+                        <p data-translate="We search the market and present curated properties that match your criteria — with virtual tours available.">We search the market and present curated properties that match your criteria — with virtual tours available.</p>
                     </div>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>Purchase & Legal</h3>
-                        <p>Our team handles everything — lawyers, mortgage, contracts, and closing. You sign, we execute.</p>
+                        <h3 data-translate="Purchase & Legal">Purchase & Legal</h3>
+                        <p data-translate="Our team handles everything — lawyers, mortgage, contracts, and closing. You sign, we execute.">Our team handles everything — lawyers, mortgage, contracts, and closing. You sign, we execute.</p>
                     </div>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-number">04</div>
                     <div class="step-content">
-                        <h3>Management & Income</h3>
-                        <p>We manage your property, find tenants, and send you monthly reports and rental income.</p>
+                        <h3 data-translate="Management & Income">Management & Income</h3>
+                        <p data-translate="We manage your property, find tenants, and send you monthly reports and rental income.">We manage your property, find tenants, and send you monthly reports and rental income.</p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="process-cta">
-                <a href="#contact" class="btn btn-primary">Start Your Journey</a>
+                <a href="#contact" class="btn btn-primary" data-translate="Start Your Journey">Start Your Journey</a>
             </div>
         </div>
     </section>
 
+    <!-- ========================================
+         AREAS SECTION
+         ⚠️ PLACEHOLDER: Add location images (see images/README.md)
+         Featured Israeli cities and regions
+         ======================================== -->
     <!-- Areas Section -->
     <section class="areas section" id="areas">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Where We Invest</span>
-                <h2 class="section-title">Prime Israeli Locations</h2>
-                <p class="section-subtitle">Featured locations across Israel — and many more</p>
+                <span class="section-tag" data-translate="Where We Invest">Where We Invest</span>
+                <h2 class="section-title" data-translate="Prime Israeli Locations">Prime Israeli Locations</h2>
+                <p class="section-subtitle" data-translate="Featured locations across Israel — and many more">Featured locations across Israel — and many more</p>
             </div>
             
             <div class="areas-grid">
@@ -1013,20 +1072,26 @@
             </div>
 
             <p style="text-align: center; margin-top: 3rem; font-size: 1.0625rem; color: var(--color-gray-600);">
-                + Many more locations across Israel. <a href="#contact" style="color: var(--color-accent); font-weight: 600;">Contact us</a> to discuss your preferred area.
+                <span data-translate="+ Many more locations across Israel.">+ Many more locations across Israel.</span> <a href="#contact" style="color: var(--color-accent); font-weight: 600;" data-translate="Contact us">Contact us</a> <span data-translate="to discuss your preferred area.">to discuss your preferred area.</span>
             </p>
         </div>
     </section>
 
+    <!-- ========================================
+         TESTIMONIALS SECTION
+         ⚠️ PLACEHOLDER: Replace [CLIENT NAME] with real client names
+         Client success stories and reviews
+         ======================================== -->
     <!-- Testimonials Preview -->
     <section class="testimonials section section-cream" id="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Success Stories</span>
-                <h2 class="section-title">What Our Clients Say</h2>
+                <span class="section-tag" data-translate="Success Stories">Success Stories</span>
+                <h2 class="section-title" data-translate="What Our Clients Say">What Our Clients Say</h2>
             </div>
             
             <div class="testimonials-slider">
+                <!-- ⚠️ TESTIMONIAL #1 - Replace [CLIENT NAME] with real name -->
                 <div class="testimonial-card">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">Davidov Israel Investments made our dream of owning property in Jerusalem a reality. From finding the perfect apartment to handling all the legal work — they were with us every step of the way.</p>
@@ -1038,7 +1103,8 @@
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- ⚠️ TESTIMONIAL #2 - Replace [CLIENT NAME] with real name -->
                 <div class="testimonial-card">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">As someone planning Aliyah in 5 years, I needed a team I could trust to find and manage my investment until I move. They've exceeded every expectation — my property is generating rental income and I get detailed reports monthly.</p>
@@ -1050,7 +1116,8 @@
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- ⚠️ TESTIMONIAL #3 - Replace [CLIENT NAME] with real name -->
                 <div class="testimonial-card">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">The mortgage process seemed impossible from overseas, but their team coordinated everything with the Israeli banks. We closed on our vacation home in Netanya without ever leaving Miami.</p>
@@ -1063,46 +1130,47 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="testimonials-cta">
-                <a href="#" class="btn btn-secondary">Read More Stories →</a>
-            </div>
         </div>
     </section>
 
+    <!-- ========================================
+         WHY CHOOSE US SECTION
+         ⚠️ PLACEHOLDER: Add team photo to images/team.jpg
+         Our unique value proposition
+         ======================================== -->
     <!-- Why Choose Us -->
     <section class="why-us section" id="about">
         <div class="container">
             <div class="why-us-grid">
                 <div class="why-us-content">
-                    <span class="section-tag">Why Davidov</span>
-                    <h2 class="section-title">Built for the American Jewish Community</h2>
-                    <p>We understand the unique needs of American Jews investing in Israel — whether you're buying a vacation home, planning future Aliyah, or building an investment portfolio.</p>
-                    
+                    <span class="section-tag" data-translate="Why Davidov">Why Davidov</span>
+                    <h2 class="section-title" data-translate="Built for the American Jewish Community">Built for the American Jewish Community</h2>
+                    <p data-translate="We understand the unique needs of American Jews investing in Israel — whether you're buying a vacation home, planning future Aliyah, or building an investment portfolio.">We understand the unique needs of American Jews investing in Israel — whether you're buying a vacation home, planning future Aliyah, or building an investment portfolio.</p>
+
                     <ul class="why-us-list">
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span><strong>US-Based Support</strong> — Reach us during American business hours</span>
+                            <span data-translate="US-Based Support — Reach us during American business hours"><strong>US-Based Support</strong> — Reach us during American business hours</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span><strong>Full Transparency</strong> — Clear pricing, no hidden fees</span>
+                            <span data-translate="Full Transparency — Clear pricing, no hidden fees"><strong>Full Transparency</strong> — Clear pricing, no hidden fees</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span><strong>English-Speaking Team</strong> — In Israel and the US</span>
+                            <span data-translate="English-Speaking Team — In Israel and the US"><strong>English-Speaking Team</strong> — In Israel and the US</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span><strong>End-to-End Service</strong> — One team from search to rental</span>
+                            <span data-translate="End-to-End Service — One team from search to rental"><strong>End-to-End Service</strong> — One team from search to rental</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span><strong>Tax Expertise</strong> — US-Israel tax implications guidance</span>
+                            <span data-translate="Tax Expertise — US-Israel tax implications guidance"><strong>Tax Expertise</strong> — US-Israel tax implications guidance</span>
                         </li>
                     </ul>
-                    
-                    <a href="#contact" class="btn btn-primary">Learn More About Us</a>
+
+                    <a href="#contact" class="btn btn-primary" data-translate="Learn More About Us">Learn More About Us</a>
                 </div>
                 
                 <div class="why-us-image">
@@ -1113,13 +1181,17 @@
         </div>
     </section>
 
+    <!-- ========================================
+         BLOG/KNOWLEDGE CENTER SECTION
+         Educational content and guides
+         ======================================== -->
     <!-- Blog Preview -->
     <section class="blog-preview section section-light" id="blog">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Knowledge Center</span>
-                <h2 class="section-title">Insights & Guides</h2>
-                <p class="section-subtitle">Essential knowledge for investing in Israeli real estate</p>
+                <span class="section-tag" data-translate="Knowledge Center">Knowledge Center</span>
+                <h2 class="section-title" data-translate="Insights & Guides">Insights & Guides</h2>
+                <p class="section-subtitle" data-translate="Essential knowledge for investing in Israeli real estate">Essential knowledge for investing in Israeli real estate</p>
             </div>
             
             <div class="blog-grid">
@@ -1155,49 +1227,54 @@
             </div>
             
             <div class="blog-cta">
-                <a href="#" class="btn btn-secondary">View All Articles →</a>
+                <a href="#" class="btn btn-secondary" data-translate="View All Articles →">View All Articles →</a>
             </div>
         </div>
     </section>
 
+    <!-- ========================================
+         CONTACT FORM SECTION
+         ⚠️ PLACEHOLDER: Update phone numbers, email, WhatsApp
+         Main contact form - redirects to Google Calendar
+         ======================================== -->
     <!-- Contact Section -->
     <section class="section" id="contact" style="background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%); padding: 4rem 0;">
         <div class="container">
             <div style="max-width: 550px; margin: 0 auto; text-align: center;">
-                <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.5rem); color: var(--color-accent); margin-bottom: 1rem; font-weight: 600;">
+                <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.5rem); color: var(--color-accent); margin-bottom: 1rem; font-weight: 600;" data-translate="Schedule Free Consultation Meeting">
                     Schedule Free Consultation Meeting
                 </h2>
-                <p style="font-size: 1rem; color: var(--color-gray-300); margin-bottom: 2rem; line-height: 1.5;">
+                <p style="font-size: 1rem; color: var(--color-gray-300); margin-bottom: 2rem; line-height: 1.5;" data-translate="Leave your details and we'll get back to you soon">
                     Leave your details and we'll get back to you soon
                 </p>
 
                 <form class="contact-form" id="contactForm" style="background: rgba(201, 169, 97, 0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(201, 169, 97, 0.3); backdrop-filter: blur(10px);">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
                         <div class="form-group">
-                            <input type="text" id="fullName" name="fullName" placeholder="Name *" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(201, 169, 97, 0.4); color: white; padding: 0.875rem 1.25rem; font-size: 0.9375rem; border-radius: 6px; width: 100%;">
+                            <input type="text" id="fullName" name="fullName" placeholder="Name *" data-translate="Name *" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(201, 169, 97, 0.4); color: white; padding: 0.875rem 1.25rem; font-size: 0.9375rem; border-radius: 6px; width: 100%;">
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Email *" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(201, 169, 97, 0.4); color: white; padding: 0.875rem 1.25rem; font-size: 0.9375rem; border-radius: 6px; width: 100%;">
+                            <input type="email" id="email" name="email" placeholder="Email *" data-translate="Email *" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(201, 169, 97, 0.4); color: white; padding: 0.875rem 1.25rem; font-size: 0.9375rem; border-radius: 6px; width: 100%;">
                         </div>
                     </div>
 
                     <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <input type="tel" id="phone" name="phone" placeholder="Phone *" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(201, 169, 97, 0.4); color: white; padding: 0.875rem 1.25rem; font-size: 0.9375rem; border-radius: 6px; width: 100%;">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone *" data-translate="Phone *" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(201, 169, 97, 0.4); color: white; padding: 0.875rem 1.25rem; font-size: 0.9375rem; border-radius: 6px; width: 100%;">
                     </div>
 
                     <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
                         <input type="checkbox" id="consent" name="consent" required style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--color-accent);">
                         <label for="consent" style="font-size: 0.8125rem; color: var(--color-gray-300); line-height: 1.4; cursor: pointer;">
-                            I agree to receive marketing materials and accept the <a href="#" style="color: var(--color-accent); text-decoration: none;">privacy policy</a>
+                            <span data-translate="I agree to receive marketing materials and accept the">I agree to receive marketing materials and accept the</span> <a href="#" style="color: var(--color-accent); text-decoration: none;" data-translate="privacy policy">privacy policy</a>
                         </label>
                     </div>
 
-                    <button type="submit" class="btn" style="width: 100%; padding: 1rem; font-size: 0.9375rem; background: transparent; border: 2px solid var(--color-accent); color: var(--color-accent); border-radius: 6px; cursor: pointer; transition: all 0.3s ease; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">
+                    <button type="submit" class="btn" style="width: 100%; padding: 1rem; font-size: 0.9375rem; background: transparent; border: 2px solid var(--color-accent); color: var(--color-accent); border-radius: 6px; cursor: pointer; transition: all 0.3s ease; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;" data-translate="Submit">
                         Submit
                     </button>
 
                     <p style="text-align: center; margin-top: 1.5rem; font-size: 0.8125rem; color: var(--color-gray-400);">
-                        Or contact us: <a href="tel:+1-XXX-XXX-XXXX" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">[PHONE]</a> |
+                        <span data-translate="Or contact us:">Or contact us:</span> <a href="tel:+1-XXX-XXX-XXXX" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">[PHONE]</a> |
                         <a href="https://wa.me/1XXXXXXXXXX" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">WhatsApp</a>
                     </p>
                 </form>
@@ -1205,6 +1282,11 @@
         </div>
     </section>
 
+    <!-- ========================================
+         FOOTER SECTION
+         ⚠️ PLACEHOLDER: Update contact info - phone, email, WhatsApp
+         Navigation links and contact details
+         ======================================== -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1214,54 +1296,59 @@
                         <span class="logo-text">DAVIDOV</span>
                         <span class="logo-sub">Israel Investments</span>
                     </a>
-                    <p>Your trusted partner for Israeli real estate investment. Full-service support for American Jewish families.</p>
+                    <p data-translate="Your trusted partner for Israeli real estate investment. Full-service support for American Jewish families.">Your trusted partner for Israeli real estate investment. Full-service support for American Jewish families.</p>
                 </div>
-                
+
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4 data-translate="Quick Links">Quick Links</h4>
                     <ul>
-                        <li><a href="#services">Our Services</a></li>
-                        <li><a href="#areas">Investment Areas</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#testimonials">Success Stories</a></li>
-                        <li><a href="#blog">Knowledge Center</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#services" data-translate="Our Services">Our Services</a></li>
+                        <li><a href="#areas" data-translate="Investment Areas">Investment Areas</a></li>
+                        <li><a href="#about" data-translate="About Us">About Us</a></li>
+                        <li><a href="#testimonials" data-translate="Success Stories">Success Stories</a></li>
+                        <li><a href="#blog" data-translate="Knowledge Center">Knowledge Center</a></li>
+                        <li><a href="#contact" data-translate="Contact Us">Contact Us</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-links">
-                    <h4>Areas</h4>
+                    <h4 data-translate="Areas">Areas</h4>
                     <ul>
-                        <li><a href="#">Jerusalem</a></li>
-                        <li><a href="#">Tel Aviv</a></li>
-                        <li><a href="#">Herzliya</a></li>
-                        <li><a href="#">Netanya</a></li>
-                        <li><a href="#">Rishon LeZion</a></li>
-                        <li><a href="#">Ramat Gan</a></li>
+                        <li><a href="#" data-translate="Jerusalem">Jerusalem</a></li>
+                        <li><a href="#" data-translate="Tel Aviv">Tel Aviv</a></li>
+                        <li><a href="#" data-translate="Herzliya">Herzliya</a></li>
+                        <li><a href="#" data-translate="Netanya">Netanya</a></li>
+                        <li><a href="#" data-translate="Rishon LeZion">Rishon LeZion</a></li>
+                        <li><a href="#" data-translate="Ramat Gan">Ramat Gan</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-contact">
-                    <h4>Contact Us</h4>
+                    <h4 data-translate="Contact Us">Contact Us</h4>
                     <ul>
-                        <li>📞 <span>US: [US PHONE]</span></li>
-                        <li>📞 <span>Israel: [IL PHONE]</span></li>
-                        <li>✉️ <span>[EMAIL]</span></li>
-                        <li>💬 <span>WhatsApp: [NUMBER]</span></li>
+                        <li>📞 <span data-translate="US: [US PHONE]">US: [US PHONE]</span></li>
+                        <li>📞 <span data-translate="Israel: [IL PHONE]">Israel: [IL PHONE]</span></li>
+                        <li>✉️ <span data-translate="[EMAIL]">[EMAIL]</span></li>
+                        <li>💬 <span data-translate="WhatsApp: [NUMBER]">WhatsApp: [NUMBER]</span></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2024 Davidov Israel Investments. All rights reserved.</p>
+                <p data-translate="© 2024 Davidov Israel Investments. All rights reserved.">© 2024 Davidov Israel Investments. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="#" data-translate="Privacy Policy">Privacy Policy</a>
+                    <a href="#" data-translate="Terms of Service">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- ========================================
+         WHATSAPP FLOATING BUTTON
+         ⚠️ PLACEHOLDER: Update href with WhatsApp number
+         Format: https://wa.me/1XXXXXXXXXX (include country code)
+         ======================================== -->
     <!-- WhatsApp Float Button -->
     <a href="#" class="whatsapp-float" aria-label="Contact us on WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1269,7 +1356,13 @@
         </svg>
     </a>
 
+    <!-- ========================================
+         JAVASCRIPT CODE
+         ======================================== -->
     <script>
+        /* ==========================================
+           NAVIGATION & SMOOTH SCROLLING
+           ========================================== */
         // Navigation
         const navbar = document.getElementById('navbar');
         const navToggle = document.getElementById('navToggle');
@@ -1301,6 +1394,10 @@
             });
         });
 
+        /* ==========================================
+           CONTACT FORM - GOOGLE CALENDAR REDIRECT
+           Form submission redirects to Google Calendar
+           ========================================== */
         // Contact Form Redirect
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
@@ -1310,16 +1407,248 @@
                 window.location.href = 'https://calendar.app.google/efxuxEBEEfA58rgV6';
             });
         }
-    </script>
 
-    <!-- Accessibility Widget -->
-    <script>
-        (function(d){
-            var s = d.createElement("script");
-            s.setAttribute("data-account", "YOUR_USERWAY_ACCOUNT_ID");
-            s.setAttribute("src", "https://cdn.userway.org/widget.js");
-            (d.body || d.head).appendChild(s);
-        })(document);
+        /* ==========================================
+           BILINGUAL SUPPORT (ENGLISH/HEBREW)
+           Language toggle with RTL support
+           Translations stored in localStorage
+           ========================================== */
+        // Language Toggle
+        const translations = {
+            en: {
+                // Navigation
+                'Home': 'Home',
+                'Services': 'Services',
+                'Areas': 'Areas',
+                'About Us': 'About Us',
+                'Testimonials': 'Testimonials',
+                'Knowledge': 'Knowledge',
+                'Schedule Meeting': 'Schedule Meeting',
+                // Hero
+                'Your Gateway to': 'Your Gateway to',
+                'Israeli Real Estate': 'Israeli Real Estate',
+                'We handle everything — from finding your perfect property to managing your investment. Full-service support for American Jews investing in Israel.': 'We handle everything — from finding your perfect property to managing your investment. Full-service support for American Jews investing in Israel.',
+                'Schedule Free Consultation': 'Schedule Free Consultation',
+                'How It Works': 'How It Works',
+                'Families Served': 'Families Served',
+                'Years Experience': 'Years Experience',
+                'Scroll to explore': 'Scroll to explore',
+                // Services
+                'What We Do': 'What We Do',
+                'Full-Cycle Investment Management': 'Full-Cycle Investment Management',
+                'From your first call to rental income — we handle every step of your Israeli property journey.': 'From your first call to rental income — we handle every step of your Israeli property journey.',
+                'Property Search': 'Property Search',
+                'Personalized property matching based on your goals — investment, vacation home, or Aliyah planning.': 'Personalized property matching based on your goals — investment, vacation home, or Aliyah planning.',
+                'Legal Support': 'Legal Support',
+                'English-speaking Israeli lawyers handle contracts, negotiations, and tax consultation.': 'English-speaking Israeli lawyers handle contracts, negotiations, and tax consultation.',
+                'Mortgage Assistance': 'Mortgage Assistance',
+                'Israeli bank coordination, documentation support, and best rate negotiation.': 'Israeli bank coordination, documentation support, and best rate negotiation.',
+                'Property Management': 'Property Management',
+                'Tenant screening, rent collection, maintenance, and monthly reporting — all handled remotely.': 'Tenant screening, rent collection, maintenance, and monthly reporting — all handled remotely.',
+                'View All Services →': 'View All Services →',
+                // Process
+                'The Process': 'The Process',
+                'A simple 4-step journey to owning property in Israel': 'A simple 4-step journey to owning property in Israel',
+                'Discovery Call': 'Discovery Call',
+                'Tell us about your goals, budget, and timeline. We\'ll understand exactly what you\'re looking for.': 'Tell us about your goals, budget, and timeline. We\'ll understand exactly what you\'re looking for.',
+                'Property Matching': 'Property Matching',
+                'We search the market and present curated properties that match your criteria — with virtual tours available.': 'We search the market and present curated properties that match your criteria — with virtual tours available.',
+                'Purchase & Legal': 'Purchase & Legal',
+                'Our team handles everything — lawyers, mortgage, contracts, and closing. You sign, we execute.': 'Our team handles everything — lawyers, mortgage, contracts, and closing. You sign, we execute.',
+                'Management & Income': 'Management & Income',
+                'We manage your property, find tenants, and send you monthly reports and rental income.': 'We manage your property, find tenants, and send you monthly reports and rental income.',
+                'Start Your Journey': 'Start Your Journey',
+                // Areas
+                'Where We Invest': 'Where We Invest',
+                'Prime Israeli Locations': 'Prime Israeli Locations',
+                'Featured locations across Israel — and many more': 'Featured locations across Israel — and many more',
+                '+ Many more locations across Israel.': '+ Many more locations across Israel.',
+                'Contact us': 'Contact us',
+                'to discuss your preferred area.': 'to discuss your preferred area.',
+                // Testimonials
+                'Success Stories': 'Success Stories',
+                'What Our Clients Say': 'What Our Clients Say',
+                // Blog/Knowledge
+                'Knowledge Center': 'Knowledge Center',
+                'Insights & Guides': 'Insights & Guides',
+                'Essential knowledge for investing in Israeli real estate': 'Essential knowledge for investing in Israeli real estate',
+                'View All Articles →': 'View All Articles →',
+                // Footer
+                'Your trusted partner for Israeli real estate investment. Full-service support for American Jewish families.': 'Your trusted partner for Israeli real estate investment. Full-service support for American Jewish families.',
+                'Quick Links': 'Quick Links',
+                'Our Services': 'Our Services',
+                'Investment Areas': 'Investment Areas',
+                'Jerusalem': 'Jerusalem',
+                'Tel Aviv': 'Tel Aviv',
+                'Herzliya': 'Herzliya',
+                'Netanya': 'Netanya',
+                'Rishon LeZion': 'Rishon LeZion',
+                'Ramat Gan': 'Ramat Gan',
+                'US: [US PHONE]': 'US: [US PHONE]',
+                'Israel: [IL PHONE]': 'Israel: [IL PHONE]',
+                '[EMAIL]': '[EMAIL]',
+                'WhatsApp: [NUMBER]': 'WhatsApp: [NUMBER]',
+                '© 2024 Davidov Israel Investments. All rights reserved.': '© 2024 Davidov Israel Investments. All rights reserved.',
+                'Privacy Policy': 'Privacy Policy',
+                'Terms of Service': 'Terms of Service',
+                // Contact Form
+                'Schedule Free Consultation Meeting': 'Schedule Free Consultation Meeting',
+                'Leave your details and we\'ll get back to you soon': 'Leave your details and we\'ll get back to you soon',
+                'Name *': 'Name *',
+                'Email *': 'Email *',
+                'Phone *': 'Phone *',
+                'I agree to receive marketing materials and accept the': 'I agree to receive marketing materials and accept the',
+                'privacy policy': 'privacy policy',
+                'Submit': 'Submit',
+                'Or contact us:': 'Or contact us:',
+                // Why Davidov
+                'Why Davidov': 'Why Davidov',
+                'Built for the American Jewish Community': 'Built for the American Jewish Community',
+                'We understand the unique needs of American Jews investing in Israel — whether you\'re buying a vacation home, planning future Aliyah, or building an investment portfolio.': 'We understand the unique needs of American Jews investing in Israel — whether you\'re buying a vacation home, planning future Aliyah, or building an investment portfolio.',
+                'US-Based Support — Reach us during American business hours': 'US-Based Support — Reach us during American business hours',
+                'Full Transparency — Clear pricing, no hidden fees': 'Full Transparency — Clear pricing, no hidden fees',
+                'English-Speaking Team — In Israel and the US': 'English-Speaking Team — In Israel and the US',
+                'End-to-End Service — One team from search to rental': 'End-to-End Service — One team from search to rental',
+                'Tax Expertise — US-Israel tax implications guidance': 'Tax Expertise — US-Israel tax implications guidance',
+                'Learn More About Us': 'Learn More About Us'
+            },
+            he: {
+                // Navigation
+                'Home': 'בית',
+                'Services': 'שירותים',
+                'Areas': 'אזורים',
+                'About Us': 'אודות',
+                'Testimonials': 'המלצות',
+                'Knowledge': 'מידע',
+                'Schedule Meeting': 'קביעת פגישה',
+                // Hero
+                'Your Gateway to': 'השער שלך',
+                'Israeli Real Estate': 'לנדל"ן בישראל',
+                'We handle everything — from finding your perfect property to managing your investment. Full-service support for American Jews investing in Israel.': 'אנחנו מטפלים בהכל - מחיפוש הנכס המושלם ועד ניהול ההשקעה. שירות מלא ליהודים אמריקאים המשקיעים בישראל.',
+                'Schedule Free Consultation': 'קביעת ייעוץ חינם',
+                'How It Works': 'איך זה עובד',
+                'Families Served': 'לקוחות',
+                'Years Experience': 'שנות ניסיון',
+                'Scroll to explore': 'גלול כדי לגלות עוד',
+                // Services
+                'What We Do': 'מה אנחנו עושים',
+                'Full-Cycle Investment Management': 'ניהול השקעות מקיף',
+                'From your first call to rental income — we handle every step of your Israeli property journey.': 'מהשיחה הראשונה ועד הכנסה משכירות - אנחנו מטפלים בכל שלב במסע הנדל"ן שלך בישראל.',
+                'Property Search': 'חיפוש נכס',
+                'Personalized property matching based on your goals — investment, vacation home, or Aliyah planning.': 'התאמת נכסים מותאמת אישית על פי המטרות שלך - השקעה, בית נופש, או תכנון עלייה.',
+                'Legal Support': 'תמיכה משפטית',
+                'English-speaking Israeli lawyers handle contracts, negotiations, and tax consultation.': 'עורכי דין ישראלים דוברי אנגלית מטפלים בחוזים, משא ומתן וייעוץ מס.',
+                'Mortgage Assistance': 'סיוע במשכנתא',
+                'Israeli bank coordination, documentation support, and best rate negotiation.': 'תיאום עם בנקים ישראליים, תמיכה בתיעוד ומשא ומתן על התנאים הטובים ביותר.',
+                'Property Management': 'ניהול נכסים',
+                'Tenant screening, rent collection, maintenance, and monthly reporting — all handled remotely.': 'בדיקת שוכרים, גביית שכירות, תחזוקה ודיווח חודשי - הכל מטופל מרחוק.',
+                'View All Services →': 'צפה בכל השירותים ←',
+                // Process
+                'The Process': 'התהליך',
+                'A simple 4-step journey to owning property in Israel': 'מסע פשוט בן 4 שלבים לבעלות על נכס בישראל',
+                'Discovery Call': 'שיחת היכרות',
+                'Tell us about your goals, budget, and timeline. We\'ll understand exactly what you\'re looking for.': 'ספרו לנו על המטרות, התקציב ולוח הזמנים שלכם. נבין בדיוק מה אתם מחפשים.',
+                'Property Matching': 'התאמת נכסים',
+                'We search the market and present curated properties that match your criteria — with virtual tours available.': 'אנו סורקים את השוק ומציגים נכסים נבחרים התואמים את הקריטריונים שלכם.',
+                'Purchase & Legal': 'רכישה ומשפט',
+                'Our team handles everything — lawyers, mortgage, contracts, and closing. You sign, we execute.': 'הצוות שלנו מטפל בהכל - עורכי דין, משכנתא, חוזים וסגירה. אתם חותמים, אנחנו מבצעים.',
+                'Management & Income': 'ניהול והכנסות',
+                'We manage your property, find tenants, and send you monthly reports and rental income.': 'אנו מנהלים את הנכס שלכם, מוצאים שוכרים ושולחים דוחות חודשיים והכנסות משכירות.',
+                'Start Your Journey': 'התחל את המסע שלך',
+                // Areas
+                'Where We Invest': 'איפה אנחנו משקיעים',
+                'Prime Israeli Locations': 'מיקומים מובילים בישראל',
+                'Featured locations across Israel — and many more': 'מיקומים נבחרים ברחבי ישראל - ועוד רבים נוספים',
+                '+ Many more locations across Israel.': '+ עוד מיקומים רבים ברחבי ישראל.',
+                'Contact us': 'צור קשר',
+                'to discuss your preferred area.': 'כדי לדון באזור המועדף עליך.',
+                // Testimonials
+                'Success Stories': 'סיפורי הצלחה',
+                'What Our Clients Say': 'מה הלקוחות שלנו אומרים',
+                // Blog/Knowledge
+                'Knowledge Center': 'מרכז ידע',
+                'Insights & Guides': 'תובנות ומדריכים',
+                'Essential knowledge for investing in Israeli real estate': 'ידע חיוני להשקעה בנדל"ן בישראל',
+                'View All Articles →': 'צפה בכל המאמרים ←',
+                // Footer
+                'Your trusted partner for Israeli real estate investment. Full-service support for American Jewish families.': 'השותף המהימן שלך להשקעות בנדל"ן בישראל. תמיכה מלאה למשפחות יהודיות אמריקאיות.',
+                'Quick Links': 'קישורים מהירים',
+                'Our Services': 'השירותים שלנו',
+                'Investment Areas': 'אזורי השקעה',
+                'Jerusalem': 'ירושלים',
+                'Tel Aviv': 'תל אביב',
+                'Herzliya': 'הרצליה',
+                'Netanya': 'נתניה',
+                'Rishon LeZion': 'ראשון לציון',
+                'Ramat Gan': 'רמת גן',
+                'US: [US PHONE]': 'ארה"ב: [US PHONE]',
+                'Israel: [IL PHONE]': 'ישראל: [IL PHONE]',
+                '[EMAIL]': '[EMAIL]',
+                'WhatsApp: [NUMBER]': 'וואטסאפ: [NUMBER]',
+                '© 2024 Davidov Israel Investments. All rights reserved.': '© 2024 Davidov Israel Investments. כל הזכויות שמורות.',
+                'Privacy Policy': 'מדיניות פרטיות',
+                'Terms of Service': 'תנאי שירות',
+                // Contact Form
+                'Schedule Free Consultation Meeting': 'קביעת פגישת ייעוץ חינם',
+                'Leave your details and we\'ll get back to you soon': 'השאירו פרטים ונחזור אליכם בהקדם',
+                'Name *': 'שם *',
+                'Email *': 'אימייל *',
+                'Phone *': 'טלפון *',
+                'I agree to receive marketing materials and accept the': 'אני מסכים לקבל חומרי שיווק ומקבל את',
+                'privacy policy': 'מדיניות הפרטיות',
+                'Submit': 'שלח',
+                'Or contact us:': 'או צרו קשר:',
+                // Why Davidov
+                'Why Davidov': 'למה דוידוב',
+                'Built for the American Jewish Community': 'נבנה עבור הקהילה היהודית האמריקאית',
+                'We understand the unique needs of American Jews investing in Israel — whether you\'re buying a vacation home, planning future Aliyah, or building an investment portfolio.': 'אנו מבינים את הצרכים הייחודיים של יהודים אמריקאים המשקיעים בישראל - בין אם אתם קונים בית נופש, מתכננים עלייה עתידית, או בונים תיק השקעות.',
+                'US-Based Support — Reach us during American business hours': 'תמיכה מארה"ב - פנו אלינו בשעות העבודה האמריקאיות',
+                'Full Transparency — Clear pricing, no hidden fees': 'שקיפות מלאה - תמחור ברור, ללא עלויות נסתרות',
+                'English-Speaking Team — In Israel and the US': 'צוות דובר אנגלית - בישראל ובארה"ב',
+                'End-to-End Service — One team from search to rental': 'שירות מקצה לקצה - צוות אחד מחיפוש ועד שכירות',
+                'Tax Expertise — US-Israel tax implications guidance': 'מומחיות מס - ייעוץ בהשלכות מס ארה"ב-ישראל',
+                'Learn More About Us': 'למד עוד אודותינו'
+            }
+        };
+
+        let currentLang = 'en';
+        const langToggle = document.getElementById('langToggle');
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+
+            // Update button text
+            langToggle.textContent = lang === 'en' ? 'עב' : 'EN';
+
+            // Update all text elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        if (langToggle) {
+            langToggle.addEventListener('click', () => {
+                setLanguage(currentLang === 'en' ? 'he' : 'en');
+            });
+        }
+
+        // Load saved language preference
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) {
+            setLanguage(savedLang);
+        }
     </script>
 </body>
 </html>
