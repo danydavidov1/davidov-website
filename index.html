@@ -1678,11 +1678,21 @@
             });
         }
 
-        // Load saved language preference
+        // Check URL parameter for language (e.g., ?lang=he or ?lang=en)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
         const savedLang = localStorage.getItem('preferredLanguage');
+
+        // Priority: User's saved preference > URL parameter > default (en)
+        // This ensures that if user manually switches language, it persists even with URL params
         if (savedLang) {
+            // User has a saved preference - respect it
             setLanguage(savedLang);
+        } else if (urlLang && (urlLang === 'en' || urlLang === 'he')) {
+            // First visit with URL parameter - use it
+            setLanguage(urlLang);
         }
+        // Otherwise stays as default 'en'
     </script>
 </body>
 </html>

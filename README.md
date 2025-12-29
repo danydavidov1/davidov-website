@@ -77,6 +77,31 @@ After a few minutes, your site will be live at:
 https://YOUR-USERNAME.github.io/davidov-israel-investments/
 ```
 
+### 🌐 Language-Specific Links
+The website supports both English and Hebrew. You can share language-specific links:
+
+**English Version (default):**
+```
+https://YOUR-USERNAME.github.io/davidov-israel-investments/?lang=en
+```
+
+**Hebrew Version:**
+```
+https://YOUR-USERNAME.github.io/davidov-israel-investments/?lang=he
+```
+
+**How it works:**
+1. **First visit with `?lang=` URL** → Site loads in that language
+2. **User clicks language toggle** → Their choice is saved and persists
+3. **Return visits (even with URL parameter)** → User's saved preference is respected
+4. **Clear browser data** → URL parameter or default language applies again
+
+**Example:**
+- User visits `?lang=en` → Site shows English
+- User clicks toggle to switch to Hebrew → Hebrew is saved
+- User refreshes page (even with `?lang=en` still in URL) → Site stays in Hebrew
+- This ensures user preference always wins!
+
 ## 🔧 Things You MUST Update
 
 ### 💡 Quick Navigation
