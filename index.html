@@ -299,18 +299,37 @@
             display: none;
             flex-direction: column;
             gap: 5px;
-            padding: 5px;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            cursor: pointer;
             z-index: 1001;
+            transition: var(--transition-base);
+        }
+
+        .nav-toggle:hover {
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .nav-toggle span {
             width: 25px;
-            height: 2px;
+            height: 3px;
             background-color: var(--color-white);
             transition: var(--transition-base);
+            border-radius: 2px;
         }
 
-        .navbar.scrolled .nav-toggle span { background-color: var(--color-primary-dark); }
+        .navbar.scrolled .nav-toggle {
+            background: rgba(26, 54, 93, 0.1);
+        }
+
+        .navbar.scrolled .nav-toggle:hover {
+            background: rgba(26, 54, 93, 0.2);
+        }
+
+        .navbar.scrolled .nav-toggle span {
+            background-color: var(--color-primary-dark);
+        }
 
         /* Hero */
         .hero {
