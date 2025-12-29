@@ -1376,9 +1376,21 @@
             }
         });
 
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event from bubbling
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const isClickInsideMenu = navMenu.contains(e.target);
+            const isClickOnToggle = navToggle.contains(e.target);
+
+            if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
 
         // Smooth scroll
