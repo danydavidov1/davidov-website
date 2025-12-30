@@ -116,15 +116,16 @@ The website includes helpful comments to guide you. Search for these in `index.h
 The website is organized with clear section markers:
 
 1. **HERO SECTION** - Main landing area with headline
-2. **SERVICES SECTION** - What you offer to clients
-3. **PROCESS SECTION** - 4-step journey explanation
-4. **AREAS SECTION** - ⚠️ Add location images
-5. **TESTIMONIALS SECTION** - ⚠️ Replace [CLIENT NAME] (3 testimonials)
-6. **WHY CHOOSE US SECTION** - ⚠️ Add team photo
-7. **BLOG/KNOWLEDGE CENTER SECTION** - Educational content
-8. **CONTACT FORM SECTION** - ⚠️ Update phone/email/WhatsApp
-9. **FOOTER SECTION** - ⚠️ Update contact information
-10. **WHATSAPP FLOATING BUTTON** - ⚠️ Update link with your number
+2. **PERSONAL INTRODUCTION** - ⚠️ Update name, title, and bio (uses images/irena.jpg)
+3. **SERVICES SECTION** - What you offer to clients
+4. **PROCESS SECTION** - 4-step journey explanation
+5. **AREAS SECTION** - ⚠️ Add location images
+6. **TESTIMONIALS SECTION** - ⚠️ Replace [CLIENT NAME] (3 testimonials)
+7. **WHY CHOOSE US SECTION** - ⚠️ Add team photo
+8. **BLOG/KNOWLEDGE CENTER SECTION** - Educational content
+9. **CONTACT FORM SECTION** - ⚠️ Update phone/email/WhatsApp
+10. **FOOTER SECTION** - ⚠️ Update contact information
+11. **WHATSAPP FLOATING BUTTON** - ⚠️ Update link with your number
 
 ### 1. Contact Information
 Search and replace these placeholders in ALL files:
