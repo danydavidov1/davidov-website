@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DY Israeli Real Estate Blog - Expert insights and guides for real estate investment in Israel">
+    <title>Blog | DY Israeli Real Estate</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style-new.css">
+</head>
+<body>
+    <!-- ...existing code... -->
+    <nav id="navbar" class="navbar" style="background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.07); padding: 1rem 0;">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index-new.html" class="logo">
+                    <img src="images/Israeli Real Estate,.png" alt="DY Israeli Real Estate" class="logo-image">
+                </a>
+                <div id="navMenu" class="nav-menu" style="color: #2d3748;">
+                    <a href="index.html" class="lang-text" style="color: #2d3748 !important;" data-en="Home" data-he="ראשי">Home</a>
+                    <a href="about-new.html" class="lang-text" style="color: #2d3748 !important;" data-en="About" data-he="אודות">About</a>
+                    <a href="index.html#services" class="lang-text" style="color: #2d3748 !important;" data-en="Services" data-he="שירותים">Services</a>
+                    <a href="blog.html" class="active lang-text" style="color: #2d3748 !important;" data-en="Blog" data-he="בלוג">Blog</a>
+                    <a href="index.html#contact" class="lang-text" style="color: #2d3748 !important;" data-en="Contact" data-he="צור קשר">Contact</a>
+                    <a href="index.html#contact" class="nav-cta lang-text" data-en="Get Started" data-he="התחל עכשיו">Get Started</a>
+                </div>
+                <button id="navToggle" class="nav-toggle" aria-label="Toggle Menu" style="background-color: transparent;">
+                    <span style="background-color: #1a365d;"></span>
+                    <span style="background-color: #1a365d;"></span>
+                    <span style="background-color: #1a365d;"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- ...existing code... -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="lang-text" data-en="Knowledge Center" data-he="מרכז הידע">Knowledge Center</h1>
+            <p class="lang-text" data-en="Expert insights, guides, and market analysis for real estate investment in Israel" data-he="תובנות מקצועיות, מדריכים וניתוחי שוק להשקעות נדל״ן בישראל">Expert insights, guides, and market analysis for real estate investment in Israel</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="blog-full-grid" id="blogGrid"></div>
+        </div>
+    </section>
+    <!-- ...existing code... -->
+    <footer class="footer">
+        <!-- ...existing code... -->
+    </footer>
+    <script src="js/main-new.js"></script>
+    <script>
+    const API_URL = 'https://hook.eu1.make.com/as5ghs4g2d5lakl7txkdiww1bkxrfiez';
+    const DEFAULT_IMAGE = 'images/jerusalem.jpg';
+
+    async function fetchPosts() {
+        try {
+            const res = await fetch(API_URL);
+            const data = await res.json();
+            if (data.success && data.posts) {
+                renderPosts(data.posts);
+            }
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+        }
+    }
+
+    function getImageUrl(post) {
+        if (post['תמונת שער'] && post['תמונת שער'].length > 0) {
+            return post['תמונת שער'][0].url;
+        }
+        return DEFAULT_IMAGE;
+    }
+
+    function formatDate(dateStr) {
+        if (!dateStr) return '';
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function escapeHtml(text) {
+        if (!text) return '';
+        return text.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function renderPosts(posts) {
+        const grid = document.getElementById('blogGrid');
+        grid.innerHTML = '';
+        
+        posts.forEach((post, i) => {
+            const imageUrl = getImageUrl(post);
+            const titleEn = escapeHtml(post['כותרת (אנגלית)']);
+            const titleHe = escapeHtml(post['כותרת (עברית)']);
+            const excerptEn = escapeHtml(post['תקציר (אנגלית)']);
+            const excerptHe = escapeHtml(post['תקציר (עברית)']);
+            const categoryEn = escapeHtml(post['קטגוריה (אנגלית)']);
+            const categoryHe = escapeHtml(post['קטגוריה (עברית)']);
+            const readTimeEn = escapeHtml(post['זמן קריאה (אנגלית)']);
+            const readTimeHe = escapeHtml(post['זמן קריאה (עברית)']);
+            const date = formatDate(post['תאריך פרסום']);
+            const slug = post['שורת כתובת (Slug)'] || post.id;
+
+            if (i === 0) {
+                grid.innerHTML += `
+                <article class="blog-card blog-card-featured">
+                    <div class="blog-image" style="background-image: url('${imageUrl}');"></div>
+                    <div class="blog-content">
+                        <span class="blog-category lang-text" data-en="${categoryEn}" data-he="${categoryHe}">${categoryEn}</span>
+                        <h2 class="lang-text" data-en="${titleEn}" data-he="${titleHe}">${titleEn}</h2>
+                        <p class="lang-text" data-en="${excerptEn}" data-he="${excerptHe}">${excerptEn}</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">${date}</span>
+                            <span class="blog-read-time lang-text" data-en="${readTimeEn}" data-he="${readTimeHe}">${readTimeEn}</span>
+                        </div>
+                        <a href="post.html?id=${post.id}" class="blog-link lang-text" data-en="Read More →" data-he="קרא עוד →">Read More →</a>
+                    </div>
+                </article>`;
+            } else {
+                grid.innerHTML += `
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('${imageUrl}');"></div>
+                    <div class="blog-content">
+                        <span class="blog-category lang-text" data-en="${categoryEn}" data-he="${categoryHe}">${categoryEn}</span>
+                        <h3 class="lang-text" data-en="${titleEn}" data-he="${titleHe}">${titleEn}</h3>
+                        <p class="lang-text" data-en="${excerptEn}" data-he="${excerptHe}">${excerptEn}</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">${date}</span>
+                            <span class="blog-read-time lang-text" data-en="${readTimeEn}" data-he="${readTimeHe}">${readTimeEn}</span>
+                        </div>
+                        <a href="post.html?id=${post.id}" class="blog-link lang-text" data-en="Read More →" data-he="קרא עוד →">Read More →</a>
+                    </div>
+                </article>`;
+            }
+        });
+
+        // Re-apply language after dynamic content is loaded
+        if (typeof applyLanguage === 'function') {
+            const currentLang = localStorage.getItem('language') || 'en';
+            applyLanguage(currentLang);
+        }
+    }
+
+    fetchPosts();
+    </script>
+</body>
+</html>
