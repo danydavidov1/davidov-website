@@ -465,10 +465,14 @@ html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4, 
     font-family: 'Heebo', serif;
 }
 
-/* Only apply row-reverse on desktop, not mobile */
+/* Only apply RTL direction on desktop nav, not mobile */
 @media (min-width: 769px) {
     html[dir="rtl"] .nav-menu {
-        flex-direction: row-reverse;
+        direction: rtl;
+    }
+    
+    html[dir="rtl"] .nav-menu a {
+        direction: rtl;
     }
 }
 
@@ -484,6 +488,49 @@ html[dir="rtl"] .nav-toggle {
 
 html[dir="rtl"] .footer-grid {
     direction: rtl;
+}
+
+/* RTL Grid Order - Reverse content order in Hebrew */
+html[dir="rtl"] .services-grid,
+html[dir="rtl"] .process-timeline,
+html[dir="rtl"] .areas-grid,
+html[dir="rtl"] .testimonials-slider,
+html[dir="rtl"] .blog-grid {
+    direction: rtl;
+}
+
+html[dir="rtl"] .service-card,
+html[dir="rtl"] .process-step,
+html[dir="rtl"] .area-card,
+html[dir="rtl"] .area-card-large,
+html[dir="rtl"] .testimonial-card,
+html[dir="rtl"] .blog-card {
+    direction: rtl;
+    text-align: right;
+}
+
+/* RTL Stats */
+html[dir="rtl"] .stats-bar {
+    direction: rtl;
+}
+
+html[dir="rtl"] .stat-item {
+    direction: rtl;
+}
+
+/* RTL Hero Section */
+html[dir="rtl"] .hero-content {
+    text-align: right;
+}
+
+/* RTL Section Headers */
+html[dir="rtl"] .section-header {
+    text-align: center;
+}
+
+/* RTL CTA Section */
+html[dir="rtl"] .cta-content {
+    text-align: center;
 }
 
 /* -------------------- Logo Image -------------------- */

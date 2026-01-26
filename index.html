@@ -35,13 +35,13 @@
                     data-he="קבעו פגישת ייעוץ ללא עלות והתחילו את מסע ההשקעה שלכם היום">
                     Schedule a free consultation and start your investment journey today
                 </p>
-                <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/irena-davidovinvestments/30min'});return false;" class="btn btn-primary btn-large">
+                <a href="https://calendly.com/irena-davidovinvestments/30min" target="_blank" class="btn btn-primary btn-large">
                     <span class="lang-text"
                         data-en="Schedule a Meeting"
                         data-he="קביעת פגישה">
                         Schedule a Meeting
                     </span>
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -618,85 +618,17 @@
                 </p>
             </div>
 
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image" style="background-image: url('images/jerusalem.jpg');"></div>
-                    <div class="blog-content">
-                        <span class="blog-category lang-text"
-                              data-en="Investment Guide"
-                              data-he="מדריך השקעה">
-                            Investment Guide
-                        </span>
-                        <h3 class="lang-text"
-                            data-en="Complete Guide to Real Estate Investment in Israel for Foreign Investors"
-                            data-he="מדריך מלא להשקעה בנדל״ן בישראל למשקיעים מחו״ל">
-                            Complete Guide to Real Estate Investment in Israel for Foreign Investors
-                        </h3>
-                        <p class="lang-text"
-                           data-en="Everything you need to know before investing: financing options, legal considerations, and step-by-step process."
-                           data-he="כל מה שצריך לדעת לפני השקעה: אפשרויות מימון, שיקולים משפטיים ותהליך שלב אחר שלב.">
-                            Everything you need to know before investing: financing options, legal considerations, and step-by-step process.
-                        </p>
-                        <a href="blog-new.html" class="blog-link lang-text"
-                           data-en="Read More →"
-                           data-he="קרא עוד →">
-                            Read More →
-                        </a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-image" style="background-image: url('images/tel aviv.jpg');"></div>
-                    <div class="blog-content">
-                        <span class="blog-category lang-text"
-                              data-en="Market Analysis"
-                              data-he="ניתוח שוק">
-                            Market Analysis
-                        </span>
-                        <h3 class="lang-text"
-                            data-en="2026 Israeli Real Estate Market Trends: What Foreign Investors Should Know"
-                            data-he="מגמות בשוק הנדל״ן הישראלי 2026: מה משקיעים זרים צריכים לדעת">
-                            2026 Israeli Real Estate Market Trends: What Foreign Investors Should Know
-                        </h3>
-                        <p class="lang-text"
-                           data-en="Current market dynamics, pricing trends, and the best cities for investment returns in the coming years."
-                           data-he="דינמיקות שוק נוכחיות, מגמות תמחור והערים הטובות ביותר לתשואת השקעה בשנים הקרובות.">
-                            Current market dynamics, pricing trends, and the best cities for investment returns in the coming years.
-                        </p>
-                        <a href="blog-new.html" class="blog-link lang-text"
-                           data-en="Read More →"
-                           data-he="קרא עוד →">
-                            Read More →
-                        </a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-image" style="background-image: url('images/Herzliya.jpg');"></div>
-                    <div class="blog-content">
-                        <span class="blog-category lang-text"
-                              data-en="Financing"
-                              data-he="מימון">
-                            Financing
-                        </span>
-                        <h3 class="lang-text"
-                            data-en="How to Get a Mortgage in Israel as a US Resident: Complete Guide"
-                            data-he="איך לקבל משכנתא בישראל כתושב ארה״ב: מדריך מלא">
-                            How to Get a Mortgage in Israel as a US Resident: Complete Guide
-                        </h3>
-                        <p class="lang-text"
-                           data-en="Requirements, documentation, and strategies for securing financing from Israeli banks as a foreign investor."
-                           data-he="דרישות, תיעוד ואסטרטגיות לקבלת מימון מבנקים ישראליים כמשקיע זר.">
-                            Requirements, documentation, and strategies for securing financing from Israeli banks as a foreign investor.
-                        </p>
-                        <a href="blog-new.html" class="blog-link lang-text"
-                           data-en="Read More →"
-                           data-he="קרא עוד →">
-                            Read More →
-                        </a>
-                    </div>
+            <div class="blog-grid" id="homeBlogGrid">
+                <!-- Loading Spinner -->
+                <div id="homeBlogLoader" style="grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; min-height: 200px;">
+                    <div class="loader" style="width: 40px; height: 40px; border: 3px solid #e2e8f0; border-top-color: #c9a961; border-radius: 50%; animation: spin 1s linear infinite;"></div>
                 </div>
             </div>
+            <style>
+                @keyframes spin {
+                    to { transform: rotate(360deg); }
+                }
+            </style>
 
             <div class="blog-cta">
                 <a href="blog-new.html" class="btn btn-secondary">
@@ -825,5 +757,77 @@
 
     <!-- JavaScript -->
     <script src="js/main-new.js"></script>
+    
+    <!-- Blog API Script -->
+    <script>
+    (function() {
+        const BLOG_API_URL = 'https://hook.eu1.make.com/as5ghs4g2d5lakl7txkdiww1bkxrfiez';
+        const DEFAULT_IMAGE = 'images/jerusalem.jpg';
+
+        async function fetchHomeBlogPosts() {
+            try {
+                const res = await fetch(BLOG_API_URL);
+                const data = await res.json();
+                if (data.success && data.posts) {
+                    renderHomeBlogPosts(data.posts.slice(0, 3)); // Only show 3 posts
+                }
+            } catch (error) {
+                console.error('Error fetching blog posts:', error);
+            }
+        }
+
+        function getImageUrl(post) {
+            if (post['תמונת שער'] && post['תמונת שער'].length > 0) {
+                return post['תמונת שער'][0].url;
+            }
+            return DEFAULT_IMAGE;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            return text.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function renderHomeBlogPosts(posts) {
+            const grid = document.getElementById('homeBlogGrid');
+            if (!grid) return;
+            
+            const loader = document.getElementById('homeBlogLoader');
+            if (loader) loader.remove();
+            grid.innerHTML = '';
+            
+            const currentLang = localStorage.getItem('siteLanguage') || 'en';
+            const isHebrew = currentLang === 'he';
+            
+            posts.forEach((post) => {
+                const imageUrl = getImageUrl(post);
+                const titleEn = escapeHtml(post['כותרת (אנגלית)']);
+                const titleHe = escapeHtml(post['כותרת (עברית)']);
+                const excerptEn = escapeHtml(post['תקציר (אנגלית)']);
+                const excerptHe = escapeHtml(post['תקציר (עברית)']);
+                const categoryEn = escapeHtml(post['קטגוריה (אנגלית)']);
+                const categoryHe = escapeHtml(post['קטגוריה (עברית)']);
+                
+                const title = isHebrew ? titleHe : titleEn;
+                const excerpt = isHebrew ? excerptHe : excerptEn;
+                const category = isHebrew ? categoryHe : categoryEn;
+                const readMore = isHebrew ? 'קרא עוד →' : 'Read More →';
+
+                grid.innerHTML += `
+                <div class="blog-card" onclick="window.location.href='post.html?id=${post.id}'" style="cursor: pointer;">
+                    <div class="blog-image" style="background-image: url('${imageUrl}');"></div>
+                    <div class="blog-content">
+                        <span class="blog-category lang-text" data-en="${categoryEn}" data-he="${categoryHe}">${category}</span>
+                        <h3 class="lang-text" data-en="${titleEn}" data-he="${titleHe}">${title}</h3>
+                        <p class="lang-text" data-en="${excerptEn}" data-he="${excerptHe}">${excerpt}</p>
+                        <span class="blog-link lang-text" data-en="Read More →" data-he="קרא עוד →">${readMore}</span>
+                    </div>
+                </div>`;
+            });
+        }
+
+        fetchHomeBlogPosts();
+    })();
+    </script>
 </body>
 </html>
