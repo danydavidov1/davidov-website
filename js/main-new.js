@@ -165,6 +165,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // -------------------- FAQ Accordion -------------------- //
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+            // Close all other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+
     // -------------------- Intersection Observer for Animations -------------------- //
     const observerOptions = {
         threshold: 0.1,
@@ -183,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe elements with animation
     const animatedElements = document.querySelectorAll(
         '.service-card, .process-step, .area-card, .testimonial-card, ' +
-        '.blog-card, .why-us-list li, .reason-card, .team-member'
+        '.blog-card, .why-us-list li, .reason-card, .team-member, .bank-logo, .faq-item'
     );
 
     animatedElements.forEach((el, index) => {
@@ -299,4 +318,106 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     images.forEach(img => imageObserver.observe(img));
+
+    // -------------------- Contact Form Submission -------------------- //
+    const contactForm = document.getElementById('contactForm');
+    const submitButton = document.querySelector('#contactForm button[type="submit"]');
+
+    console.log('Contact form found:', contactForm);
+    console.log('Submit button found:', submitButton);
+
+    if (submitButton) {
+        submitButton.addEventListener('click', async function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Button clicked');
+
+            // Get values directly
+            const fullNameInput = document.querySelector('#contactForm input[name="fullName"]');
+            const phoneInput = document.querySelector('#contactForm input[name="phone"]');
+            const emailInput = document.querySelector('#contactForm input[name="email"]');
+
+            const fullName = fullNameInput.value.trim();
+            const phone = phoneInput.value.trim();
+            const email = emailInput.value.trim();
+
+            console.log('Form values:', { fullName, phone, email });
+
+            // Reset error styles
+            fullNameInput.classList.remove('error');
+            phoneInput.classList.remove('error');
+            emailInput.classList.remove('error');
+
+            // Validate - all fields required
+            let isValid = true;
+            
+            if (!fullName) {
+                fullNameInput.classList.add('error');
+                isValid = false;
+                console.log('Validation failed - missing fullName');
+            }
+            if (!phone) {
+                phoneInput.classList.add('error');
+                isValid = false;
+                console.log('Validation failed - missing phone');
+            }
+            if (!email) {
+                emailInput.classList.add('error');
+                isValid = false;
+                console.log('Validation failed - missing email');
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && !emailRegex.test(email)) {
+                emailInput.classList.add('error');
+                isValid = false;
+                console.log('Validation failed - invalid email');
+            }
+
+            if (!isValid) {
+                // Scroll to first error
+                const firstError = contactForm.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.focus();
+                }
+                return;
+            }
+
+            // Disable submit button and show loading
+            const originalText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="lang-text">' + (currentLang === 'he' ? 'שולח...' : 'Sending...') + '</span>';
+
+            console.log('Sending to API...');
+
+            try {
+                const response = await fetch('https://hook.eu1.make.com/kv17xo5r0lkj897wa91imc6swaadt8ty', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        "שם מלא": fullName,
+                        "טלפון": phone,
+                        "אימייל": email
+                    })
+                });
+
+                console.log('API response:', response.status);
+                
+                // Scroll to button after successful submission
+                submitButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                contactForm.reset();
+
+            } catch (error) {
+                console.error('Form submission error:', error);
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalText;
+            }
+        });
+    }
 });
