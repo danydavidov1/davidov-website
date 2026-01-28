@@ -651,6 +651,17 @@
                     </div>
                 </div>
             </div>
+            <!-- Desktop only: More locations and context -->
+            <div class="more-locations-row" style="display:none; margin-top:32px; text-align:center;" id="moreLocationsRow">
+                <h4 class="lang-text" data-en="And More Locations Across Israel" data-he="ועוד מיקומים ברחבי ישראל" style="font-size:1.3rem; margin-bottom:12px;">And More Locations Across Israel</h4>
+                <p class="lang-text" data-en="We help you find opportunities in additional cities and neighborhoods, including Ra'anana, Ramat Gan, Petah Tikva, Ashdod, Be'er Sheva, and more. Ask us about custom searches!" data-he="אנחנו עוזרים לכם למצוא הזדמנויות גם בערים ושכונות נוספות, כולל רעננה, רמת גן, פתח תקווה, אשדוד, באר שבע ועוד. שאלו אותנו על חיפוש מותאם אישית!" style="max-width:700px; margin:0 auto; color:#444;">We help you find opportunities in additional cities and neighborhoods, including Ra'anana, Ramat Gan, Petah Tikva, Ashdod, Be'er Sheva, and more. Ask us about custom searches!</p>
+            </div>
+            <script>
+            // Show more-locations-row only on desktop
+            if (window.innerWidth > 1024) {
+              document.getElementById('moreLocationsRow').style.display = 'block';
+            }
+            </script>
         </div>
     </section>
 
