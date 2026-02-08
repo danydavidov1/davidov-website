@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // -------------------- Language Management -------------------- //
     const langToggle = document.getElementById('langToggle');
-    const langFlag = document.querySelector('.lang-flag');
+    const langLabelEn = document.querySelector('.lang-label-en');
+    const langLabelHe = document.querySelector('.lang-label-he');
     const htmlElement = document.documentElement;
 
     // Get saved language or default to English
@@ -21,9 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
         htmlElement.setAttribute('lang', lang);
         htmlElement.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
 
-        // Update flag
-        if (langFlag) {
-            langFlag.textContent = lang === 'en' ? '🇺🇸' : '🇮🇱';
+        // Update language label
+        if (langLabelEn && langLabelHe) {
+            langLabelEn.style.display = lang === 'en' ? 'inline-block' : 'none';
+            langLabelHe.style.display = lang === 'he' ? 'inline-block' : 'none';
         }
 
         // Update all text elements
