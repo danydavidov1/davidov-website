@@ -1573,6 +1573,19 @@ html[dir="rtl"] .faq-icon {
     background-color: var(--color-accent);
 }
 
+.lang-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.lang-float:hover .lang-label {
+    color: var(--color-white);
+}
+
 /* Keep it on the right in RTL mode */
 html[dir="rtl"] .lang-float {
     right: var(--space-xl) !important;
